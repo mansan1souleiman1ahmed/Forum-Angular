@@ -1,7 +1,51 @@
 /* You can add global styles to this file, and also import other style files */
 @import "@angular/material/prebuilt-themes/indigo-pink.css";
+@mixin bakground-image-cover-norepeat($url) {
+  background-image: url($url);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@mixin keyframes-prefixer($animationName) {
+  @-webkit-keyframes #{$animationName} {
+    @content;
+  }
+
+  @-moz-keyframes #{$animationName} {
+    @content;
+  }
+
+  @keyframes #{$animationName} {
+    @content;
+  }
+}
+@include keyframes-prefixer(dynamic-theme-color) {
+  from {
+    transform: scale(1);
+  }
+  to {
+    border-radius: 50%;
+    transform: scale(1.1);
+    opacity: 0.2;
+    border: none;
+    outline-style: none;
+    display: none;
+  }
+}
 .container {
   margin: 0px 40px;
+  .toolbar {
+    background-color: #e13352;
+    color: #ffffff;
+  }
+}
+.container-begel-img-welcome-page {
+  height: 350px;
+  width: 350px;
+  @include bakground-image-cover-norepeat("./app/img/begel.jpg");
+  &:hover {
+    animation: dynamic-theme-color 1s 1;
+    animation-fill-mode: forwards;
+  }
 }
 .fill-remaining-space {
   flex: 1 1 auto;

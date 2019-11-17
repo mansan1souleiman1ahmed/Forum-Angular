@@ -35,5 +35,3 @@ Forum-Angular-Websocket
 12 Import Browser animation in A.mod and and put it in import array
 
 13 Git push
-
-12 Import
