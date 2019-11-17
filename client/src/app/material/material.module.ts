@@ -4,7 +4,17 @@ import * as Material from "@angular/material";
 
 @NgModule({
   declarations: [],
-  imports: [CommonModule, Material.MatToolbarModule],
-  exports: [Material.MatToolbarModule]
+  imports: [
+    CommonModule,
+    Material.MatToolbarModule,
+    Material.MatFormFieldModule,
+    Material.MatInputModule
+  ],
+  exports: [
+    Material.MatToolbarModule,
+    Material.MatGridListModule,
+    Material.MatFormFieldModule,
+    Material.MatInputModule
+  ]
 })
 export class MaterialModule {}

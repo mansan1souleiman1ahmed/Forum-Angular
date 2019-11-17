@@ -1,0 +1,21 @@
+<form [formGroup]="service.form" class="normal-form">
+  <mat-grid-list cols="2" rowHeight="300px">
+    <mat-grid-tile>
+      <div class="controles-container">
+        <input type="hidden" formControlName="$key" />
+        <mat-form-field>
+          <input formControlName="fullName" matInput placeholder="full name" />
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="name" matInput placeholder="name" />
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="mobile" matInput placeholder="mobile" />
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="city" matInput placeholder="city" />
+        </mat-form-field>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</form>
