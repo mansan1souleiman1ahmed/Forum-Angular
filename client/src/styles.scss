@@ -20,12 +20,14 @@
 }
 @include keyframes-prefixer(dynamic-theme-color) {
   from {
+    //  opacity: 1;
     transform: scale(1);
   }
   to {
     border-radius: 50%;
     transform: scale(1.1);
-    opacity: 0.2;
+    transform: rotate(20deg);
+    // opacity: 0.9;
     border: none;
     outline-style: none;
     display: none;
@@ -39,12 +41,15 @@
   }
 }
 .container-begel-img-welcome-page {
+  margin: auto;
+  margin-top: 5%;
   height: 350px;
   width: 350px;
   @include bakground-image-cover-norepeat("./app/img/begel.jpg");
   &:hover {
     animation: dynamic-theme-color 1s 1;
     animation-fill-mode: forwards;
+    cursor: pointer;
   }
 }
 .fill-remaining-space {
