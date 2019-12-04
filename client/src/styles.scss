@@ -57,8 +57,11 @@
 }
 form.normal {
   margin: 10px;
+  /*   display: inline-block;
+  position: relative; */
+  text-align: center;
 }
 .controles-container {
-  width: 100%;
+  width: 90px;
   padding: 0px;
 }
