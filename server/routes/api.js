@@ -6,14 +6,15 @@ const mongoose = require("mongoose");
 //Connection string
 //Import model so you can use it request
 const User = require("../model/user");
-const db = "mongodb+srv://mansan:mansan@cluster0-76n6f.azure.mongodb.net/test";
+const db =
+  "mongodb+srv://angular:angular@cluster0-xubta.mongodb.net/test?retryWrites=true&w=majority";
 //Connection to database
 mongoose.connect(db, err => {
   if (err) {
     //Test to connection
     console.log("no connxion");
   } else {
-    console.log("success connected");
+    console.log("Succes XXXXXX");
   }
 });
 
