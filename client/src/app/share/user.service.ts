@@ -9,6 +9,8 @@ export class UserService {
     $key: new FormControl(null),
     fullName: new FormControl(""),
     name: new FormControl(""),
+    email: new FormControl(""),
+    password: new FormControl(""),
     mobile: new FormControl(""),
     city: new FormControl(""),
     gender: new FormControl(""),

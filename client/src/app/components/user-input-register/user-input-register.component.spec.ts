@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UserInputComponent } from './user-input.component';
+import { UserInputRegisterComponent } from './user-input-register.component';
 
-describe('UserInputComponent', () => {
-  let component: UserInputComponent;
-  let fixture: ComponentFixture<UserInputComponent>;
+describe('UserInputRegisterComponent', () => {
+  let component: UserInputRegisterComponent;
+  let fixture: ComponentFixture<UserInputRegisterComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UserInputComponent ]
+      declarations: [ UserInputRegisterComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UserInputComponent);
+    fixture = TestBed.createComponent(UserInputRegisterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

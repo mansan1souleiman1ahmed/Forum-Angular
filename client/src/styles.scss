@@ -38,6 +38,22 @@
   .toolbar {
     background-color: #e13352;
     color: #ffffff;
+    a {
+      text-decoration: none;
+      color: #fff;
+    }
+    span {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    p {
+      &:hover {
+        cursor: pointer;
+      }
+      padding: 10px;
+    }
   }
 }
 .container-begel-img-welcome-page {
@@ -53,7 +69,7 @@
   }
 }
 .fill-remaining-space {
-  flex: 1 1 auto;
+  flex: 1;
 }
 form.normal {
   margin: 10px;

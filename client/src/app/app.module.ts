@@ -14,24 +14,27 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { UserComponent } from "./components/user/user.component";
 import { ToolbarComponent } from "./components/toolbar/toolbar.component";
-import { UserInputComponent } from "./components/user-input/user-input.component";
+
 import { MaterialModule } from "./material/material.module";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { RegisterPageComponent } from "./components/pages/register-page/register-page.component";
 import { LoginPageComponent } from "./components/pages/login-page/login-page.component";
 import { WelcomePageComponent } from "./components/pages/welcome-page/welcome-page.component";
 import { ErrorPageComponent } from "./components/pages/error-page/error-page.component";
+import { UserInputRegisterComponent } from "./components/user-input-register/user-input-register.component";
+import { UserInputLoginComponent } from './components/user-input-login/user-input-login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
     ToolbarComponent,
-    UserInputComponent,
     RegisterPageComponent,
     LoginPageComponent,
     WelcomePageComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    UserInputRegisterComponent,
+    UserInputLoginComponent
   ],
   imports: [
     BrowserModule,
