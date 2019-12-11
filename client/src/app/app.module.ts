@@ -2,13 +2,14 @@ import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 //Import for routing
 import { Routes, RouterModule } from "@angular/router";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 //Material module
 
-import { ReactiveFormsModule } from "@angular/forms";
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 //
 //Service
 import { UserService } from "./share/user.service";
-
+import { AuthService } from "./share/auth.service";
 //
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -22,7 +23,10 @@ import { LoginPageComponent } from "./components/pages/login-page/login-page.com
 import { WelcomePageComponent } from "./components/pages/welcome-page/welcome-page.component";
 import { ErrorPageComponent } from "./components/pages/error-page/error-page.component";
 import { UserInputRegisterComponent } from "./components/user-input-register/user-input-register.component";
-import { UserInputLoginComponent } from './components/user-input-login/user-input-login.component';
+import { UserInputLoginComponent } from "./components/user-input-login/user-input-login.component";
+import { MembersLandingPageComponent } from "./components/pages/members-landing-page/members-landing-page.component";
+import { AuthGuard } from "./auth.guard";
+import { TokenInterceptorService } from "./token-interceptor.service";
 
 @NgModule({
   declarations: [
@@ -34,16 +38,28 @@ import { UserInputLoginComponent } from './components/user-input-login/user-inpu
     WelcomePageComponent,
     ErrorPageComponent,
     UserInputRegisterComponent,
-    UserInputLoginComponent
+    UserInputLoginComponent,
+    MembersLandingPageComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     MaterialModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
-  providers: [UserService],
+  providers: [
+    UserService,
+    AuthService,
+    AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

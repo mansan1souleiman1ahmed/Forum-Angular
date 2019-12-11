@@ -5,8 +5,13 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-  emmail: String,
-  password: String
+  fullName: String,
+  name: String,
+  email: String,
+  password: String,
+  mobile: Number,
+  city: String,
+  gender: String
 });
 module.exports = mongoose.model("user", userSchema, "users");
 //user = name of the schame, userSchema is the userSchema, users is the name of the collection

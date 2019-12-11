@@ -1,28 +1,64 @@
-<form [formGroup]="service.form" class="normal-form">
-  <mat-grid-list cols="0" rowHeight="400px">
+<form class="normal-form">
+  <mat-grid-list cols="0" rowHeight="500px">
     <mat-grid-tile>
       <div class="controles-container">
-        <input type="hidden" formControlName="$key" />
+        <input type="hidden" />
         <mat-form-field>
-          <input formControlName="fullName" matInput placeholder="full name" />
+          <input
+            matInput
+            [(ngModel)]="registerUserData.fullName"
+            name="fullName"
+            placeholder="full name"
+          />
         </mat-form-field>
         <br />
         <mat-form-field>
-          <input formControlName="name" matInput placeholder="name" />
+          <input
+            matInput
+            [(ngModel)]="registerUserData.name"
+            name="name"
+            placeholder="name"
+          />
         </mat-form-field>
         <br />
         <mat-form-field>
-          <input formControlName="mobile" matInput placeholder="mobile" />
+          <input
+            matInput
+            [(ngModel)]="registerUserData.email"
+            name="email"
+            placeholder="email"
+          />
         </mat-form-field>
         <br />
         <mat-form-field>
-          <input formControlName="city" matInput placeholder="city" />
+          <input
+            matInput
+            [(ngModel)]="registerUserData.mobile"
+            name="mobile"
+            placeholder="mobile"
+          />
         </mat-form-field>
         <br />
         <mat-form-field>
-          <input formControlName="password" matInput placeholder="password" />
+          <input
+            matInput
+            [(ngModel)]="registerUserData.city"
+            name="city"
+            placeholder="city"
+          />
         </mat-form-field>
+        <br />
+        <mat-form-field>
+          <input
+            matInput
+            [(ngModel)]="registerUserData.password"
+            name="password"
+            placeholder="password"
+          />
+        </mat-form-field>
+        <button mat-button (click)="registerUser()">Click me!</button>
       </div>
     </mat-grid-tile>
   </mat-grid-list>
 </form>
+<br />

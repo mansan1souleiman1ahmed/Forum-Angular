@@ -2,7 +2,15 @@
   <mat-toolbar class="toolbar">
     <a routerLink="/"><span>Bagel</span></a>
     <span class="fill-remaining-space"></span>
-    <a routerLink="/login"> <p>Login</p></a>
-    <a routerLink="/register"> <p>Register</p></a>
+    <a routerLink="/login" *ngIf="!_authService.loggedIn()"> <p>Login</p></a>
+    <a routerLink="/register" *ngIf="!_authService.loggedIn()">
+      <p>Register</p></a
+    >
+    <a
+      *ngIf="_authService.loggedIn()"
+      style="cursor:pointer"
+      (click)="_authService.logoutUser()"
+      >Logout</a
+    >
   </mat-toolbar>
 </div>

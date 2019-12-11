@@ -1,19 +1,36 @@
-<form [formGroup]="service.form" class="normal-form">
+<form class="normal-form">
   <mat-grid-list cols="0" rowHeight="400px">
     <mat-grid-tile>
       <div class="controles-container">
-        <input type="hidden" formControlName="$key" />
         <mat-form-field>
-          <input formControlName="name" matInput placeholder="name" />
+          <input
+            matInput
+            [(ngModel)]="loginUserData.name"
+            name="name"
+            placeholder="name"
+          />
         </mat-form-field>
         <br />
         <mat-form-field>
-          <input formControlName="email" matInput placeholder="email" />
+          <input
+            matInput
+            [(ngModel)]="loginUserData.email"
+            name="email"
+            placeholder="email"
+          />
         </mat-form-field>
         <br />
         <mat-form-field>
-          <input formControlName="password" matInput placeholder="password" />
+          <input
+            matInput
+            [(ngModel)]="loginUserData.password"
+            name="password"
+            placeholder="password"
+          />
         </mat-form-field>
+        <button mat-button (click)="loginUser()" type="button">
+          Click me!
+        </button>
       </div>
     </mat-grid-tile>
   </mat-grid-list>
