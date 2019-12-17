@@ -27,6 +27,8 @@ import { UserInputLoginComponent } from "./components/user-input-login/user-inpu
 import { MembersLandingPageComponent } from "./components/pages/members-landing-page/members-landing-page.component";
 import { AuthGuard } from "./auth.guard";
 import { TokenInterceptorService } from "./token-interceptor.service";
+import { ForumComponent } from "./components/pages/forum/forum.component";
+import { ForumService } from "./wss-serves/forum.service";
 
 @NgModule({
   declarations: [
@@ -39,7 +41,8 @@ import { TokenInterceptorService } from "./token-interceptor.service";
     ErrorPageComponent,
     UserInputRegisterComponent,
     UserInputLoginComponent,
-    MembersLandingPageComponent
+    MembersLandingPageComponent,
+    ForumComponent
   ],
   imports: [
     BrowserModule,
@@ -54,6 +57,7 @@ import { TokenInterceptorService } from "./token-interceptor.service";
     UserService,
     AuthService,
     AuthGuard,
+    ForumService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptorService,

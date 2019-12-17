@@ -18,6 +18,7 @@ mongoose.connect(db, err => {
     console.log("Succes XXXXXX");
   }
 });
+//Function called later when trying to LOgin
 function verifyToken(req, res, next) {
   if (!req.headers.authorization) {
     console.log(req.headers.authorization);

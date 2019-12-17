@@ -6,6 +6,7 @@ import { WelcomePageComponent } from "./components/pages/welcome-page/welcome-pa
 import { ErrorPageComponent } from "./components/pages/error-page/error-page.component";
 import { MembersLandingPageComponent } from "./components/pages/members-landing-page/members-landing-page.component";
 import { AuthGuard } from "./auth.guard";
+import { ForumComponent } from "./components/pages/forum/forum.component";
 const routes: Routes = [
   {
     path: "",
@@ -23,6 +24,10 @@ const routes: Routes = [
     path: "members",
     component: MembersLandingPageComponent,
     canActivate: [AuthGuard]
+  },
+  {
+    path: "forum",
+    component: ForumComponent
   },
   {
     path: "**",

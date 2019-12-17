@@ -20,5 +20,6 @@ export class UserInputRegisterComponent implements OnInit {
       error => console.log(error)
     );
   }
+
   ngOnInit() {}
 }
