@@ -1,4 +1,41 @@
-<p>members-landing-page works!</p>
 <div>
   {{ specialEvents }}
+  <h1>EUROPE</h1>
 </div>
+<br />
+<div class="forum-member"></div>
+<br />
+<mat-grid-list cols="4" rowHeight="400px">
+  <mat-grid-tile class="grid-members-landing-page">
+    <div>
+      <h1>Liste de bouffe</h1>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile class="grid-members-landing-page">
+    <div>
+      <h1>Intérressé</h1>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile class="grid-members-landing-page">
+    <div>
+      <h1>Fait</h1>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile class="grid-members-landing-page">
+    <form class="example-form">
+      <div class="forum"></div>
+      <br />
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Name" value="" />
+      </mat-form-field>
+      <br />
+      <mat-form-field class="example-full-width">
+        <textarea matInput placeholder="Leave a comment"></textarea>
+      </mat-form-field>
+      <br />
+      <button mat-button type="button">
+        send
+      </button>
+    </form>
+  </mat-grid-tile>
+</mat-grid-list>
