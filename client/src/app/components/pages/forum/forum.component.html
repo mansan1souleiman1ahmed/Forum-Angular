@@ -2,8 +2,10 @@
   <mat-grid-tile class="grid-members-landing-page">
     <form class="example-form">
       <div class="forum">
-        <div *ngFor="let message of messages" class="message">
-          {{ message }}
+        <div class="message">
+          <p *ngFor="let message of messages">
+            {{ message.text }}
+          </p>
         </div>
       </div>
       <br />
@@ -12,7 +14,7 @@
           matInput
           required
           placeholder="Name"
-          [(ngModel)]="nam1e"
+          [(ngModel)]="name"
           name="name"
           value=""
         />
@@ -25,13 +27,17 @@
           matInput
           placeholder="Leave a comment"
           required
-          (keyup)="$event.keyCode == 13 && sendMessage()"
+          (keyup)="$event.keyCode == 3 && sendMessage()"
         ></textarea>
       </mat-form-field>
       <br />
       <button mat-button type="button" (click)="sendMessage()">
         send
       </button>
+      <br /><button mat-button type="button" (click)="test()">
+        send
+      </button>
     </form>
   </mat-grid-tile>
 </mat-grid-list>
+<!-- (keyup)="$event.keyCode && keyBoard()" -->
