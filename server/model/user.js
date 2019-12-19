@@ -11,7 +11,8 @@ const userSchema = new Schema({
   password: String,
   mobile: Number,
   city: String,
-  gender: String
+  gender: String,
+  text: String
 });
 module.exports = mongoose.model("user", userSchema, "users");
 //user = name of the schame, userSchema is the userSchema, users is the name of the collection
