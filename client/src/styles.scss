@@ -85,19 +85,36 @@ form.normal {
   }
 }
 .grid-members-landing-page {
-  border: black solid;
-  .forum {
-    background-color: brown;
-    height: 150px;
-    width: 300px;
-    .message {
-      height: 30px;
-      width: 170px;
-      background-color: green;
-      color: black;
+  .example-form {
+    .forum {
+      /*    .messages {
+        .message {
+          height: 70px;
+          background-color: green;
+        }
+      } */
+    }
+    button {
+      background-color: #2ad424;
     }
   }
-  button {
-    background-color: #2ad424;
+}
+.conatainer-chat {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-width: 400px;
+  word-break: break-all;
+  ul {
+    li {
+      padding: 10px;
+      display: inline-block;
+    }
+  }
+  .messages {
+    .message {
+      height: 70px;
+    }
   }
 }
+//https://www.nexmo.com/blog/2018/03/28/build-chat-app-angular-material-stitch-javascript-dr

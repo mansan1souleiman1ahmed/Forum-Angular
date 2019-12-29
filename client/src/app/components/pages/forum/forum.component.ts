@@ -1,4 +1,10 @@
-import { Component, OnInit } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  ElementRef,
+  ViewChild,
+  AfterViewChecked
+} from "@angular/core";
 import { ForumService } from "src/app/wss-serves/forum.service";
 import { ShowOnDirtyErrorStateMatcher } from "@angular/material";
 
@@ -8,18 +14,21 @@ import { ShowOnDirtyErrorStateMatcher } from "@angular/material";
 
   styleUrls: ["./forum.component.scss"]
 })
-export class ForumComponent {
+export class ForumComponent implements OnInit, AfterViewChecked {
   title = "app works!";
   message: string;
   name: string;
+  names: string[] = [];
   messages: string[] = [];
+  @ViewChild("scrollFrame", { static: false }) scrollFrame: ElementRef;
 
   constructor(private wssForum: ForumService) {}
+
   sendMessage() {
     this.wssForum.sendMessage(this.message);
     this.message = "";
-    /*  this.wssForum.sendName(this.name);
-    this.name = ""; */
+    this.wssForum.sendName(this.name);
+    this.name = "";
   }
   keyBoard(event) {
     console.log(this.message);
@@ -29,11 +38,20 @@ export class ForumComponent {
       this.messages.push(message);
     });
 
-    /* this.wssForum.getName().subscribe((name: string) => {
-      this.name;
-    }); */
+    this.wssForum.getName().subscribe((name: string) => {
+      this.names.push(name);
+    });
   }
-  test() {
-    console.log(this.messages);
+  scrollToBottom(): void {
+    this.scrollFrame.nativeElement.scrollTop = this.scrollFrame.nativeElement.scrollHeight;
+  }
+
+  ngAfterViewChecked() {
+    //   //this.scrollFrame.nativeElement.focus();
+    //this.scrollToBottom();
   }
 }
+
+/*  test() {
+    console.log(this.messages);
+  } */

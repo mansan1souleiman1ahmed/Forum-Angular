@@ -33,7 +33,7 @@ io.on("connection", function(socket) {
   socket.on("new-message", message => {
     console.log("Message Received: " + message);
     io.emit("message", { type: "new-message", text: message });
-    let messageObject = { text: message };
+    /* let messageObject = { text: message };
     let user = new User(messageObject);
     user.save((error, registering) => {
       if (error) {
@@ -41,7 +41,20 @@ io.on("connection", function(socket) {
       } else {
         console.log("success");
       }
-    });
+    }); */
+  });
+  socket.on("new-name", name => {
+    console.log("Message Received: " + name);
+    io.emit("name", { type: "new-name", text: name });
+    /* let messageObject = { text: message };
+    let user = new User(messageObject);
+    user.save((error, registering) => {
+      if (error) {
+        console.log(error);
+      } else {
+        console.log("success");
+      }
+    }); */
   });
 
   socket.on("new-name", name => {

@@ -1,43 +1,53 @@
-<mat-grid-list cols="0">
+<mat-grid-list cols="2">
   <mat-grid-tile class="grid-members-landing-page">
     <form class="example-form">
-      <div class="forum">
-        <div class="message">
-          <p *ngFor="let message of messages">
-            {{ message.text }}
-          </p>
-        </div>
+      <div class="input-form">
+        <mat-form-field class="example-full-width">
+          <input
+            [(ngModel)]="name"
+            name="name"
+            matInput
+            placeholder="Write your name"
+            required
+            (keyup)="$event.keyCode == 3 && sendName()"
+          />
+        </mat-form-field>
+        <br />
+        <mat-form-field class="example-full-width">
+          <textarea
+            [(ngModel)]="message"
+            name="message"
+            matInput
+            placeholder="Leave a comment"
+            required
+            (keyup)="$event.keyCode == 3 && sendMessage()"
+          ></textarea>
+        </mat-form-field>
+        <br />
+        <button mat-button type="button" (click)="sendMessage()">
+          send
+        </button>
       </div>
-      <br />
-      <mat-form-field class="example-full-width">
-        <input
-          matInput
-          required
-          placeholder="Name"
-          [(ngModel)]="name"
-          name="name"
-          value=""
-        />
-      </mat-form-field>
-      <br />
-      <mat-form-field class="example-full-width">
-        <textarea
-          [(ngModel)]="message"
-          name="message"
-          matInput
-          placeholder="Leave a comment"
-          required
-          (keyup)="$event.keyCode == 3 && sendMessage()"
-        ></textarea>
-      </mat-form-field>
-      <br />
-      <button mat-button type="button" (click)="sendMessage()">
-        send
-      </button>
-      <br /><button mat-button type="button" (click)="test()">
-        send
-      </button>
     </form>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <div class="conatainer-chat" #scrollFrame>
+      <ul>
+        <li>
+          <div class="messages" *ngFor="let name of names">
+            <span class="messages">{{ name.text }}</span>
+          </div>
+        </li>
+        <li>
+          <div class="messages" *ngFor="let message of messages">
+            <span class="message">{{ message.text }}</span>
+          </div>
+        </li>
+      </ul>
+    </div>
   </mat-grid-tile>
 </mat-grid-list>
 <!-- (keyup)="$event.keyCode && keyBoard()" -->
+<!--  <br /><button mat-button type="button" (click)="test()">
+          send
+        </button> -->

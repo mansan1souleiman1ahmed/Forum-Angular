@@ -10,26 +10,26 @@ export class ForumService {
   constructor() {
     this.socket = io(this.url);
   }
-  /*   public sendName(name) {
+  public sendName(name) {
     this.socket.emit("new-name", name);
-  } */
+  }
   public sendMessage(message) {
     this.socket.emit("new-message", message);
   }
-  /* public getName = () => {
-    return Observable.create(observer => {
-      this.socket.on("new-name", name => {
+  public getName = () => {
+    let observable = new Observable(observer => {
+      this.socket = io(this.url);
+      this.socket.on("name", name => {
         observer.next(name);
       });
+      return () => {
+        this.socket.disconnect();
+      };
     });
-  }; */
+    return observable;
+  };
+
   public getMessages = () => {
-    /*  return Observable.create(observer => {
-      this.socket.on("new-message", message => {
-        observer.next(message);
-      });
-    });
-  }; */
     let observable = new Observable(observer => {
       this.socket = io(this.url);
       this.socket.on("message", message => {

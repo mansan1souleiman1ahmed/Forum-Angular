@@ -29,6 +29,8 @@ import { AuthGuard } from "./auth.guard";
 import { TokenInterceptorService } from "./token-interceptor.service";
 import { ForumComponent } from "./components/pages/forum/forum.component";
 import { ForumService } from "./wss-serves/forum.service";
+import { EuropeComponent } from './components/location.pages/europe/europe.component';
+import { AfricaComponent } from './components/location.pages/africa/africa.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { ForumService } from "./wss-serves/forum.service";
     UserInputRegisterComponent,
     UserInputLoginComponent,
     MembersLandingPageComponent,
-    ForumComponent
+    ForumComponent,
+    EuropeComponent,
+    AfricaComponent
   ],
   imports: [
     BrowserModule,
