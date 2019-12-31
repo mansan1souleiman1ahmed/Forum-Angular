@@ -1,1 +1,29 @@
-<p>europe works!</p>
+<div>
+  {{ specialEvents }}
+  <h1>EUROPE</h1>
+  <a routerLink="/forum"
+    ><button mat-button type="button">
+      forum
+    </button>
+  </a>
+</div>
+<br />
+<div class="forum-member"></div>
+<br />
+<mat-grid-list cols="3" rowHeight="400px">
+  <mat-grid-tile class="grid-members-landing-page">
+    <div>
+      <h1>Liste de bouffe</h1>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile class="grid-members-landing-page">
+    <div>
+      <h1>Intérressé</h1>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile class="grid-members-landing-page">
+    <div>
+      <h1>Fait</h1>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>

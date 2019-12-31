@@ -29,8 +29,12 @@ import { AuthGuard } from "./auth.guard";
 import { TokenInterceptorService } from "./token-interceptor.service";
 import { ForumComponent } from "./components/pages/forum/forum.component";
 import { ForumService } from "./wss-serves/forum.service";
-import { EuropeComponent } from './components/location.pages/europe/europe.component';
-import { AfricaComponent } from './components/location.pages/africa/africa.component';
+import { EuropeComponent } from "./components/location.pages/europe/europe.component";
+import { AfricaComponent } from "./components/location.pages/africa/africa.component";
+import { NorthAmericaComponent } from "./components/location.pages/north-america/north-america.component";
+import { SouthAmericaComponent } from "./components/location.pages/south-america/south-america.component";
+import { WestAsiaComponent } from "./components/location.pages/west-asia/west-asia.component";
+import { EastAsiaComponent } from "./components/location.pages/east-asia/east-asia.component";
 
 @NgModule({
   declarations: [
@@ -46,7 +50,11 @@ import { AfricaComponent } from './components/location.pages/africa/africa.compo
     MembersLandingPageComponent,
     ForumComponent,
     EuropeComponent,
-    AfricaComponent
+    AfricaComponent,
+    NorthAmericaComponent,
+    SouthAmericaComponent,
+    WestAsiaComponent,
+    EastAsiaComponent
   ],
   imports: [
     BrowserModule,

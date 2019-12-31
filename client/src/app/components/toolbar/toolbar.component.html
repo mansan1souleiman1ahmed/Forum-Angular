@@ -1,6 +1,6 @@
 <div class="container">
   <mat-toolbar class="toolbar">
-    <a routerLink="/"><span>Bagel</span></a>
+    <span (click)="redirectToolbar()"><p>Bagel</p></span>
     <span class="fill-remaining-space"></span>
     <a routerLink="/login" *ngIf="!_authService.loggedIn()"> <p>Login</p></a>
     <a routerLink="/register" *ngIf="!_authService.loggedIn()">

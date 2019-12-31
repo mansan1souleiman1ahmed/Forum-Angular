@@ -1,4 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url("https://fonts.googleapis.com/css?family=Saira&display=swap");
+////
 @import "@angular/material/prebuilt-themes/indigo-pink.css";
 @mixin bakground-image-cover-norepeat($url) {
   background-image: url($url);
@@ -58,9 +61,26 @@
 }
 .container-begel-img-welcome-page {
   margin: auto;
-  margin-top: 5%;
-  height: 350px;
-  width: 350px;
+  margin-top: 7%;
+
+  height: 330px;
+  width: 330px;
+  background-color: red;
+
+  @include bakground-image-cover-norepeat("./app/img/begel.jpg");
+  &:hover {
+    animation: dynamic-theme-color 1s 1;
+    animation-fill-mode: forwards;
+    cursor: pointer;
+  }
+}
+.container-begel-img-landing-page {
+  margin: auto;
+  margin-top: 1%;
+  height: 230px;
+  width: 230px;
+  background-color: red;
+
   @include bakground-image-cover-norepeat("./app/img/begel.jpg");
   &:hover {
     animation: dynamic-theme-color 1s 1;
@@ -118,3 +138,26 @@ form.normal {
   }
 }
 //https://www.nexmo.com/blog/2018/03/28/build-chat-app-angular-material-stitch-javascript-dr
+.landing-page-container {
+  button {
+    height: 30px;
+    width: 130px;
+    font-family: "Saira", sans-serif;
+  }
+  ul {
+    text-align: center;
+    list-style-type: none;
+    li {
+      padding: 0px;
+      display: inline-block;
+      margin: 5px;
+    }
+  }
+  .land-page-item-1 {
+  }
+  .land-page-item-2 {
+  }
+  .land-page-item-3 {
+    text-align: center;
+  }
+}

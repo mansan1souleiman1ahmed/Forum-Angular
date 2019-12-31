@@ -7,6 +7,12 @@ import { ErrorPageComponent } from "./components/pages/error-page/error-page.com
 import { MembersLandingPageComponent } from "./components/pages/members-landing-page/members-landing-page.component";
 import { AuthGuard } from "./auth.guard";
 import { ForumComponent } from "./components/pages/forum/forum.component";
+import { EuropeComponent } from "./components/location.pages/europe/europe.component";
+import { AfricaComponent } from "./components/location.pages/africa/africa.component";
+import { NorthAmericaComponent } from "./components/location.pages/north-america/north-america.component";
+import { SouthAmericaComponent } from "./components/location.pages/south-america/south-america.component";
+import { WestAsiaComponent } from "./components/location.pages/west-asia/west-asia.component";
+import { EastAsiaComponent } from "./components/location.pages/east-asia/east-asia.component";
 const routes: Routes = [
   {
     path: "",
@@ -28,6 +34,31 @@ const routes: Routes = [
   {
     path: "forum",
     component: ForumComponent
+  },
+
+  {
+    path: "europe",
+    component: EuropeComponent
+  },
+  {
+    path: "africa",
+    component: AfricaComponent
+  },
+  {
+    path: "north-america",
+    component: NorthAmericaComponent
+  },
+  {
+    path: "south-america",
+    component: SouthAmericaComponent
+  },
+  {
+    path: "west-asia",
+    component: WestAsiaComponent
+  },
+  {
+    path: "east-asia",
+    component: EastAsiaComponent
   },
   {
     path: "**",
