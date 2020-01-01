@@ -1,1 +1,49 @@
-<p>africa works!</p>
+<div class="container-chat" #scrollTopAfrica>
+  <div class="item-chat" #scrollFrame>
+    <ul>
+      <li>
+        <div class="name" *ngFor="let nameAfrica of namesAfrica">
+          <span class="messages">{{ nameAfrica.text }}</span
+          ><span>:</span>
+        </div>
+      </li>
+      <li>
+        <div class="messages" *ngFor="let messageAfrica of messagesAfrica">
+          <span class="message">{{ messageAfrica.text }}</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="grid-members-landing-page">
+  <form class="example-form">
+    <div class="input-form">
+      <mat-form-field class="example-full-width">
+        <input
+          [(ngModel)]="nameAfrica"
+          name="nameAfrica"
+          matInput
+          placeholder="Write your name"
+          required
+          (keyup)="$event.keyCode == 3 && sendName()"
+        />
+      </mat-form-field>
+      <br />
+      <mat-form-field class="example-full-width">
+        <textarea
+          [(ngModel)]="messageAfrica"
+          name="messageAfrica"
+          matInput
+          placeholder="Leave a comment"
+          required
+          (keyup)="$event.keyCode == 3 && sendMessage()"
+          (keydown.enter)="sendMessage()"
+        ></textarea>
+      </mat-form-field>
+      <br />
+      <button mat-button type="button" (click)="sendMessage()">
+        send
+      </button>
+    </div>
+  </form>
+</div>

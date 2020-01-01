@@ -48,7 +48,7 @@ export class ForumComponent implements OnInit, AfterViewChecked {
 
   ngAfterViewChecked() {
     //   //this.scrollFrame.nativeElement.focus();
-    //this.scrollToBottom();
+    this.scrollToBottom();
   }
 }
 

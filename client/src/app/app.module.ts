@@ -10,6 +10,8 @@ import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 //Service
 import { UserService } from "./share/user.service";
 import { AuthService } from "./share/auth.service";
+import { ForumService } from "./wss-serves/forum.service";
+import { ForumLocationsPagesService } from "./wss-serves/forum-locations-pages.service";
 //
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -28,7 +30,7 @@ import { MembersLandingPageComponent } from "./components/pages/members-landing-
 import { AuthGuard } from "./auth.guard";
 import { TokenInterceptorService } from "./token-interceptor.service";
 import { ForumComponent } from "./components/pages/forum/forum.component";
-import { ForumService } from "./wss-serves/forum.service";
+
 import { EuropeComponent } from "./components/location.pages/europe/europe.component";
 import { AfricaComponent } from "./components/location.pages/africa/africa.component";
 import { NorthAmericaComponent } from "./components/location.pages/north-america/north-america.component";
@@ -70,6 +72,8 @@ import { EastAsiaComponent } from "./components/location.pages/east-asia/east-as
     AuthService,
     AuthGuard,
     ForumService,
+    ForumLocationsPagesService,
+
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptorService,

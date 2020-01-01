@@ -119,24 +119,7 @@ form.normal {
     }
   }
 }
-.conatainer-chat {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  max-width: 400px;
-  word-break: break-all;
-  ul {
-    li {
-      padding: 10px;
-      display: inline-block;
-    }
-  }
-  .messages {
-    .message {
-      height: 70px;
-    }
-  }
-}
+
 //https://www.nexmo.com/blog/2018/03/28/build-chat-app-angular-material-stitch-javascript-dr
 .landing-page-container {
   button {
@@ -159,5 +142,41 @@ form.normal {
   }
   .land-page-item-3 {
     text-align: center;
+  }
+}
+
+.container-chat {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 400px;
+  height: 300px;
+
+  .item-chat {
+    overflow-y: scroll;
+
+    height: 300px;
+    width: 400px;
+    ul {
+      li {
+        padding-right: 10px;
+        display: inline-block;
+        .name {
+          width: 108px;
+        }
+        .messages {
+          width: 217px;
+          max-width: 345px;
+          word-break: break-all;
+        }
+      }
+    }
+  }
+}
+ul {
+  .messages {
+    .message {
+      height: 70px;
+    }
   }
 }

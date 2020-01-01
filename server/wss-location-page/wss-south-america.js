@@ -5,11 +5,10 @@ const io = require("socket.io")(http);
 const bodyParser = require("body-parser");
 app.use(bodyParser.json());
 const mongoose = require("mongoose");
-const User = require("./model/user");
 
 app.use(cors());
-http.listen(3500, function() {
-  console.log("listening on 3500");
+http.listen(3800, function() {
+  console.log("listening on 3800");
 });
 io.on("connection", () => {
   console.log("user connected");
@@ -19,16 +18,15 @@ io.on("connection", function(socket) {
   socket.on("disconnect", function() {
     console.log("user disconnected");
   });
-  socket.on("new-message", message => {
-    console.log("Message Received: " + message);
-    io.emit("message", { type: "new-message", text: message });
+  socket.on("new-message-south-america", messageSouthAmerica => {
+    console.log("Message Received: " + messageSouthAmerica);
+    io.emit("message-south-america", {
+      type: "new-message",
+      text: messageSouthAmerica
+    });
   });
-  socket.on("new-name", name => {
-    console.log("Message Received: " + name);
-    io.emit("name", { type: "new-name", text: name });
-  });
-
-  socket.on("new-name", name => {
-    console.log(name);
+  socket.on("new-name-south-america", nameSouthAmerica => {
+    console.log("Message Received: " + nameSouthAmerica);
+    io.emit("name-south-america", { type: "new-name", text: nameSouthAmerica });
   });
 });
