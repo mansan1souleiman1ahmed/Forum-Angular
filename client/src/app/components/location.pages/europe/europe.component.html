@@ -1,3 +1,54 @@
+<div class="container-chat">
+  <div class="item-chat" #scrollFrame>
+    <ul>
+      <li>
+        <div class="name" *ngFor="let nameEurope of namesEurope">
+          <span class="names">{{ nameEurope.text }}</span
+          ><span>:</span>
+        </div>
+      </li>
+      <li>
+        <div class="messages" *ngFor="let messageEurope of messagesEurope">
+          <span class="message">{{ messageEurope.text }}</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="grid-members-landing-page">
+  <form class="example-form">
+    <div class="input-form">
+      <mat-form-field class="example-full-width">
+        <input
+          [(ngModel)]="nameEurope"
+          required
+          name="nameEurope"
+          matInput
+          placeholder="Write your name"
+          (keyup)="$event.keyCode == 3 && sendName()"
+        />
+      </mat-form-field>
+      <br />
+      <mat-form-field class="example-full-width">
+        <textarea
+          [(ngModel)]="messageEurope"
+          required
+          name="messageEurope"
+          matInput
+          placeholder="Leave a comment"
+          (keyup)="$event.keyCode == 3 && sendMessage()"
+          (keydown.enter)="sendMessage()"
+        ></textarea>
+      </mat-form-field>
+      <br />
+      <button mat-button type="button" (click)="sendMessage()">
+        send
+      </button>
+    </div>
+  </form>
+</div>
+
 <div>
   {{ specialEvents }}
   <h1>EUROPE</h1>
