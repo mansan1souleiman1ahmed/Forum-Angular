@@ -10,6 +10,7 @@ import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 //Service
 import { UserService } from "./share/user.service";
 import { AuthService } from "./share/auth.service";
+import { RecipesService } from "./share/recipes.service";
 import { ForumService } from "./wss-serves/forum.service";
 import { ForumLocationsPagesService } from "./wss-serves/forum-locations-pages.service";
 //
@@ -73,7 +74,7 @@ import { EastAsiaComponent } from "./components/location.pages/east-asia/east-as
     AuthGuard,
     ForumService,
     ForumLocationsPagesService,
-
+    RecipesService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptorService,

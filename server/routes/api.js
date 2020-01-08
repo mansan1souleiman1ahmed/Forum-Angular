@@ -7,13 +7,15 @@ const mongoose = require("mongoose");
 //Connection string
 //Import model so you can use it request
 const User = require("../model/user");
+const Recipe = require("../model/recipe");
 const db =
   "mongodb+srv://mansan:mansan@cluster0-xubta.mongodb.net/angular-forum?retryWrites=true&w=majority";
 //Connection to database
+let tokkenRecipes;
 mongoose.connect(db, err => {
   if (err) {
     //Test to connection
-    console.log("no connxion");
+    console.log("no connexion");
   } else {
     console.log("Succes XXXXXX");
   }
@@ -25,6 +27,7 @@ function verifyToken(req, res, next) {
     return res.status(401).send("Unauthorized request A");
   }
   let token = req.headers.authorization.split(" ")[1];
+  tokkenRecipe = tokkenRecipes;
   if (token === "null") {
     return res.status(401).send("Unauthorized request B");
   }
@@ -160,5 +163,41 @@ router.get("/members", verifyToken, (req, res) => {
   ];
   res.json(specialEvents);
 });
+//Saving the recipes in mongodb then sending back resp
+router.post("/europe", (req, res) => {
+  let userRecipeData = req.body;
+  (async () => {
+    try {
+      let userRecipe = await new Recipe(userRecipeData).save();
+      let sendBack = await res.send({ userRecipeData });
+    } finally {
+      console.log("success");
+    }
+  })().catch(err => console.error(err));
+});
+//Query from mongodb the recipes then send to front the recipe
+
+router.get("/europe", (req, res) => {
+  Recipe.find({}, (err, recipe) => {
+    if (err) {
+      res.send("error");
+    }
+    res.json(recipe);
+  });
+});
 
 module.exports = router;
+/* router.post("/register", (req, res) => {
+  let userData = req.body;
+  let user = new User(userData); //You  use the model you create so mongoose can understand the structure, of the request. => YOu get the User object or the user model.
+  user.save((error, registerdUser) => {
+    //Now you can save by applying the save method on the model created.
+    if (error) {
+      console.log("ERROR" + error);
+    } else {
+      let payload = { subject: registerdUser._id };
+      let token = jwt.sign(payload, "secret");
+      res.status(200).send({ token });
+    }
+  });
+});  */

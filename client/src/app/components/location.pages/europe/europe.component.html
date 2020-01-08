@@ -1,3 +1,44 @@
+<div class="recipes-container">
+  <div class="recipes-display-container">
+    <div class="recipes-container">
+      <div class="recipes-items" *ngFor="let items of recipesEuropeArray">
+        {{ items }}
+      </div>
+      <!-- <span>:</span> -->
+    </div>
+    <!--   <div class="messages" *ngFor="let of">
+      <span class="message">{{}}</span>
+    </div> -->
+  </div>
+  <div class="input-recipes">
+    <div class="input-form">
+      <!--  <mat-form-field>
+        <input
+          [(ngModel)]=""
+          required
+          name=""
+          matInput
+          placeholder="Write Step's number"
+        />
+      </mat-form-field> -->
+      <br />
+      <mat-form-field>
+        <textarea
+          [(ngModel)]="RecipeSteps.steps"
+          required
+          name="steps"
+          matInput
+          placeholder="Leave a comment"
+        ></textarea>
+      </mat-form-field>
+      <br />
+      <button (click)="sendRecipe()">
+        send
+      </button>
+    </div>
+  </div>
+</div>
+
 <div class="container-chat">
   <div class="item-chat" #scrollFrame>
     <ul>
@@ -48,7 +89,7 @@
     </div>
   </form>
 </div>
-
+<!--  -->
 <div>
   {{ specialEvents }}
   <h1>EUROPE</h1>

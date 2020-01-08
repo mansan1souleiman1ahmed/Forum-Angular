@@ -29,8 +29,7 @@
   to {
     border-radius: 50%;
     transform: scale(1.1);
-    transform: rotate(20deg);
-    // opacity: 0.9;
+    transform: rotate(50deg);
     border: none;
     outline-style: none;
     display: none;
@@ -65,7 +64,6 @@
 
   height: 330px;
   width: 330px;
-  background-color: red;
 
   @include bakground-image-cover-norepeat("./app/img/begel.jpg");
   &:hover {
@@ -79,7 +77,6 @@
   margin-top: 1%;
   height: 230px;
   width: 230px;
-  background-color: red;
 
   @include bakground-image-cover-norepeat("./app/img/begel.jpg");
   &:hover {
@@ -126,6 +123,7 @@ form.normal {
     height: 30px;
     width: 130px;
     font-family: "Saira", sans-serif;
+    cursor: pointer;
   }
   ul {
     text-align: center;
@@ -144,7 +142,12 @@ form.normal {
     text-align: center;
   }
 }
-
+.recipes-display-container {
+  height: 400px;
+  width: 400px;
+  overflow-y: scroll;
+  background-color: lightblue;
+}
 .container-chat {
   display: flex;
   flex-direction: column;
