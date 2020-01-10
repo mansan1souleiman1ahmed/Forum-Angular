@@ -1,9 +1,6 @@
 import { Injectable, OnInit } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Router } from "@angular/router";
-//import { recipeSchema } from "share/app/src/client/server/model/recipes.js";
-
-//import { recipeSchema } from "./model.recipes";
 import { HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { RecipeModel } from "./recipeModel";
@@ -20,9 +17,6 @@ export class RecipesService {
     return this.http.post<any>(this.url, recipes);
   }
   //Get recipes=> See the components.ts and .html files.
-  /*  public getRecipesEurope() {
-    return this.http.get<any>("http://localhost:3000/api/europe");
-  } */
   public getRecipesEurope(): Observable<RecipeModel[]> {
     return this.http.get<any>("http://localhost:3000/api/europe");
   }

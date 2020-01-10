@@ -171,7 +171,7 @@ router.post("/europe", (req, res) => {
       let userRecipe = await new Recipe(userRecipeData).save();
       let sendBack = await res.send({ userRecipeData });
     } finally {
-      console.log("success");
+      console.log(userRecipeData);
     }
   })().catch(err => console.error(err));
 });

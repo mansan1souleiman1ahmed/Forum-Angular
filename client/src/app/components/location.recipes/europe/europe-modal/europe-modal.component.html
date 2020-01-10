@@ -1,0 +1,32 @@
+<h4>Hi,NAME impresse us with your delicious recipes :)</h4>
+Vegeterian :<input type="checkbox" [(ngModel)]="RecipeSteps.vegeterian" />
+<br />
+Vegan:<input type="checkbox" [(ngModel)]="RecipeSteps.vegan" />
+<br />
+Normal :<input type="checkbox" [(ngModel)]="RecipeSteps.normal" />
+
+<br /><br />
+<mat-form-field>
+  <input
+    matInput
+    [(ngModel)]="RecipeSteps.recipeTitle"
+    required
+    name="recipeTitle"
+    placeholder="Recipe's name"
+  />
+</mat-form-field>
+
+<mat-form-field>
+  <input
+    matInput
+    [(ngModel)]="RecipeSteps.steps"
+    required
+    name="steps"
+    placeholder="Write your recipe here :)"
+  />
+</mat-form-field>
+
+<br />
+<button mat-button (click)="sendRecipe()">
+  send
+</button>

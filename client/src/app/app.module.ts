@@ -38,6 +38,8 @@ import { NorthAmericaComponent } from "./components/location.pages/north-america
 import { SouthAmericaComponent } from "./components/location.pages/south-america/south-america.component";
 import { WestAsiaComponent } from "./components/location.pages/west-asia/west-asia.component";
 import { EastAsiaComponent } from "./components/location.pages/east-asia/east-asia.component";
+import { EuropeModalComponent } from "./components/location.recipes/europe/europe-modal/europe-modal.component";
+import { AfricaModalComponent } from "./components/location.recipes/europe/africa-modal/africa-modal.component";
 
 @NgModule({
   declarations: [
@@ -57,7 +59,9 @@ import { EastAsiaComponent } from "./components/location.pages/east-asia/east-as
     NorthAmericaComponent,
     SouthAmericaComponent,
     WestAsiaComponent,
-    EastAsiaComponent
+    EastAsiaComponent,
+    EuropeModalComponent,
+    AfricaModalComponent
   ],
   imports: [
     BrowserModule,
@@ -68,6 +72,8 @@ import { EastAsiaComponent } from "./components/location.pages/east-asia/east-as
     BrowserAnimationsModule,
     HttpClientModule
   ],
+  entryComponents: [EuropeModalComponent],
+
   providers: [
     UserService,
     AuthService,

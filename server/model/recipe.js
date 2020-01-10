@@ -3,9 +3,11 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const recipeSchema = new Schema({
-  vegeterian: Boolean,
   europe: Boolean,
+  vegeterian: Boolean,
+  vegan: Boolean,
   normal: Boolean,
+  recipeTitle: String,
   steps: String
 });
 module.exports = mongoose.model("recipes", recipeSchema, "recipe");

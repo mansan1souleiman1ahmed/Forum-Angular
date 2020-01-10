@@ -8,6 +8,12 @@ import {
 import { ForumLocationsPagesService } from "src/app/wss-serves/forum-locations-pages.service";
 import { RecipesService } from "src/app/share/recipes.service";
 import { Observable } from "rxjs";
+import {
+  MatDialog,
+  MatDialogRef,
+  MAT_DIALOG_DATA
+} from "@angular/material/dialog";
+import { EuropeModalComponent } from "../../location.recipes/europe/europe-modal/europe-modal.component";
 
 @Component({
   selector: "app-europe",
@@ -19,23 +25,39 @@ export class EuropeComponent implements OnInit, AfterViewChecked {
   nameEurope: string;
   namesEurope: string[] = [];
   messagesEurope: string[] = [];
-  recipesEuropeArray: any[] = [];
+  recipesEuropeArray: String[] = [];
+  recipesEuropeTitle: String;
   recipesEurope: object[] = [];
   recipesData = {};
   @ViewChild("scrollFrame", { static: false })
   scrollFrame: ElementRef;
-  RecipeSteps = {};
+  //RecipeSteps = {};
 
   constructor(
     private forumLocationPages: ForumLocationsPagesService,
-    private Recipes: RecipesService
+    private Recipes: RecipesService,
+    public dialog: MatDialog
   ) {}
-  sendRecipe() {
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(EuropeModalComponent, {
+      width: "750px",
+      height: "450px"
+      // data: { name: this.name, animal: this.animal }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log("The dialog was closed");
+      //  this.animal = result;
+    });
+  }
+
+  /*  sendRecipe() {
     this.Recipes.sendRecipes(this.RecipeSteps).subscribe(res => {
       ///console.log("send" + res);
-    });
-    // this.recipesEurope = "";
-  }
+    }); */
+  // this.recipesEurope = "";
+  //}
   sendMessage() {
     this.forumLocationPages.sendMessageEurope(this.messageEurope);
     this.messageEurope = "";
@@ -46,14 +68,16 @@ export class EuropeComponent implements OnInit, AfterViewChecked {
 
   ngOnInit() {
     this.Recipes.getRecipesEurope().subscribe(recipesEurope => {
-      console.log(recipesEurope);
-      console.log(recipesEurope[1].steps);
+      console.log(recipesEurope[0].recipeTitle);
+
+      // console.log(recipesEurope);
       recipesEurope.forEach(ele => {
         console.log(ele);
         this.recipesEuropeArray.push(ele.steps);
+        this.recipesEuropeTitle = ele.recipeTitle;
       });
       console.log(this.recipesEuropeArray);
-      return this.recipesEuropeArray;
+      //   return this.recipesEuropeArray;
     });
 
     this.forumLocationPages

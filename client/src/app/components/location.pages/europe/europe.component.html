@@ -1,121 +1,91 @@
-<div class="recipes-container">
-  <div class="recipes-display-container">
+<mat-grid-list cols="2">
+  <mat-grid-tile>
     <div class="recipes-container">
-      <div class="recipes-items" *ngFor="let items of recipesEuropeArray">
-        {{ items }}
+      <div class="recipes-display-container">
+        <div class="recipes-container">
+          <div class="recipes-items" *ngFor="let items of recipesEuropeArray">
+            <div class="recipes-title">{{ recipesEuropeTitle }}</div>
+            <span>{{ items }}</span>
+          </div>
+        </div>
       </div>
-      <!-- <span>:</span> -->
-    </div>
-    <!--   <div class="messages" *ngFor="let of">
-      <span class="message">{{}}</span>
-    </div> -->
-  </div>
-  <div class="input-recipes">
-    <div class="input-form">
-      <!--  <mat-form-field>
-        <input
-          [(ngModel)]=""
-          required
-          name=""
-          matInput
-          placeholder="Write Step's number"
-        />
-      </mat-form-field> -->
-      <br />
-      <mat-form-field>
-        <textarea
-          [(ngModel)]="RecipeSteps.steps"
-          required
-          name="steps"
-          matInput
-          placeholder="Leave a comment"
-        ></textarea>
-      </mat-form-field>
-      <br />
-      <button (click)="sendRecipe()">
-        send
-      </button>
-    </div>
-  </div>
-</div>
-
-<div class="container-chat">
-  <div class="item-chat" #scrollFrame>
-    <ul>
-      <li>
-        <div class="name" *ngFor="let nameEurope of namesEurope">
-          <span class="names">{{ nameEurope.text }}</span
-          ><span>:</span>
+      <div class="input-recipes">
+        <div class="input-form">
+          <br />
+          <!--      <mat-form-field>
+            <textarea
+              [(ngModel)]="RecipeSteps.steps"
+              required
+              name="steps"
+              matInput
+              placeholder="Leave a comment"
+            ></textarea>
+          </mat-form-field>
+          <br />
+          <button (click)="sendRecipe()">
+            send
+          </button> -->
+          <button mat-button type="button" (click)="openDialog()">
+            Create
+          </button>
         </div>
-      </li>
-      <li>
-        <div class="messages" *ngFor="let messageEurope of messagesEurope">
-          <span class="message">{{ messageEurope.text }}</span>
-        </div>
-      </li>
-    </ul>
-  </div>
-</div>
-
-<div class="grid-members-landing-page">
-  <form class="example-form">
-    <div class="input-form">
-      <mat-form-field class="example-full-width">
-        <input
-          [(ngModel)]="nameEurope"
-          required
-          name="nameEurope"
-          matInput
-          placeholder="Write your name"
-          (keyup)="$event.keyCode == 3 && sendName()"
-        />
-      </mat-form-field>
-      <br />
-      <mat-form-field class="example-full-width">
-        <textarea
-          [(ngModel)]="messageEurope"
-          required
-          name="messageEurope"
-          matInput
-          placeholder="Leave a comment"
-          (keyup)="$event.keyCode == 3 && sendMessage()"
-          (keydown.enter)="sendMessage()"
-        ></textarea>
-      </mat-form-field>
-      <br />
-      <button mat-button type="button" (click)="sendMessage()">
-        send
-      </button>
-    </div>
-  </form>
-</div>
-<!--  -->
-<div>
-  {{ specialEvents }}
-  <h1>EUROPE</h1>
-  <a routerLink="/forum"
-    ><button mat-button type="button">
-      forum
-    </button>
-  </a>
-</div>
-<br />
-<div class="forum-member"></div>
-<br />
-<mat-grid-list cols="3" rowHeight="400px">
-  <mat-grid-tile class="grid-members-landing-page">
-    <div>
-      <h1>Liste de bouffe</h1>
+      </div>
     </div>
   </mat-grid-tile>
-  <mat-grid-tile class="grid-members-landing-page">
-    <div>
-      <h1>Intérressé</h1>
-    </div>
-  </mat-grid-tile>
-  <mat-grid-tile class="grid-members-landing-page">
-    <div>
-      <h1>Fait</h1>
+  <mat-grid-tile>
+    <div class="container-europe-forum">
+      <div class="container-chat">
+        <div class="item-chat" #scrollFrame>
+          <ul>
+            <li>
+              <div class="name" *ngFor="let nameEurope of namesEurope">
+                <span class="names">{{ nameEurope.text }}</span
+                ><span>:</span>
+              </div>
+            </li>
+            <li>
+              <div
+                class="messages"
+                *ngFor="let messageEurope of messagesEurope"
+              >
+                <span class="message">{{ messageEurope.text }}</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid-members-landing-page">
+        <form class="example-form">
+          <div class="input-form">
+            <mat-form-field class="example-full-width">
+              <input
+                [(ngModel)]="nameEurope"
+                required
+                name="nameEurope"
+                matInput
+                placeholder="Write your name"
+                (keyup)="$event.keyCode == 3 && sendName()"
+              />
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+              <textarea
+                [(ngModel)]="messageEurope"
+                required
+                name="messageEurope"
+                matInput
+                placeholder="Leave a comment"
+                (keyup)="$event.keyCode == 3 && sendMessage()"
+                (keydown.enter)="sendMessage()"
+              ></textarea>
+            </mat-form-field>
+            <button mat-button type="button" (click)="sendMessage()">
+              send
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   </mat-grid-tile>
 </mat-grid-list>

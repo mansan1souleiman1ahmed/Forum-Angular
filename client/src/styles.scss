@@ -153,12 +153,12 @@ form.normal {
   flex-direction: column;
   flex-wrap: wrap;
   width: 400px;
-  height: 300px;
-
+  height: 500px;
+  background-color: lightpink;
   .item-chat {
     overflow-y: scroll;
 
-    height: 300px;
+    height: 500px;
     width: 400px;
     ul {
       li {
@@ -180,6 +180,37 @@ ul {
   .messages {
     .message {
       height: 70px;
+    }
+  }
+}
+.container-europe-forum {
+  display: flex;
+  flex-direction: column;
+}
+.europe-modal-recipe {
+  height: 300px;
+  width: 90%;
+  padding: 2%;
+  background-color: lightpink;
+}
+.recipes-container {
+  .recipes-display-container {
+    .recipes-container {
+      .recipes-title {
+        background-color: green;
+        height: 30px;
+        text-align: center;
+      }
+      .recipes-items {
+        background-color: red;
+        height: 150px;
+        margin-top: 10px;
+        text-align: center;
+        span {
+          word-break: break-all;
+          padding: 10px;
+        }
+      }
     }
   }
 }

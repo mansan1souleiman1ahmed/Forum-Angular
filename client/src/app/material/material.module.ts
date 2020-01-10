@@ -10,7 +10,9 @@ import * as Material from "@angular/material";
     Material.MatFormFieldModule,
     Material.MatInputModule,
     Material.MatButtonModule,
-    Material.MatListModule
+    Material.MatListModule,
+    Material.MatDialogModule,
+    Material.MatCheckboxModule
   ],
   exports: [
     Material.MatToolbarModule,
@@ -18,7 +20,9 @@ import * as Material from "@angular/material";
     Material.MatFormFieldModule,
     Material.MatInputModule,
     Material.MatButtonModule,
-    Material.MatListModule
+    Material.MatListModule,
+    Material.MatDialogModule,
+    Material.MatCheckboxModule
   ]
 })
 export class MaterialModule {}

@@ -1,6 +1,8 @@
 export interface RecipeModel {
-  vegeterian: Boolean;
   europe: Boolean;
+  vegeterian: Boolean;
+  vegan: Boolean;
   normal: Boolean;
+  recipeTitle: String;
   steps: String;
 }
