@@ -28,6 +28,7 @@ export class EuropeComponent implements OnInit, AfterViewChecked {
   recipesEuropeArray: String[] = [];
   recipesEuropeTitle: String;
   recipesEurope: object[] = [];
+  recipesEuropeTitleArray: String[] = [];
   recipesData = {};
   @ViewChild("scrollFrame", { static: false })
   scrollFrame: ElementRef;
@@ -68,16 +69,21 @@ export class EuropeComponent implements OnInit, AfterViewChecked {
 
   ngOnInit() {
     this.Recipes.getRecipesEurope().subscribe(recipesEurope => {
-      console.log(recipesEurope[0].recipeTitle);
+      console.log(recipesEurope[3].recipeTitle);
 
       // console.log(recipesEurope);
       recipesEurope.forEach(ele => {
-        console.log(ele);
+        //   console.log(ele);
         this.recipesEuropeArray.push(ele.steps);
-        this.recipesEuropeTitle = ele.recipeTitle;
+        this.recipesEuropeTitleArray.push(ele.recipeTitle);
+        let test = ele.recipeTitle;
+        console.log("voici les titre" + ">>>>>>>>>>>>>" + test);
       });
-      console.log(this.recipesEuropeArray);
+      //  console.log(this.recipesEuropeArray);
       //   return this.recipesEuropeArray;
+      /*   this.recipesEuropeTitleArray.map(ele => {
+        return ele;
+      }); */
     });
 
     this.forumLocationPages

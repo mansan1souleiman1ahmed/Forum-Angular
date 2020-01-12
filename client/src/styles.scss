@@ -198,12 +198,16 @@ ul {
     .recipes-container {
       .recipes-title {
         background-color: green;
-        height: 30px;
+
         text-align: center;
+        span {
+          margin-top: 10px;
+          background-color: orange;
+        }
       }
       .recipes-items {
         background-color: red;
-        height: 150px;
+
         margin-top: 10px;
         text-align: center;
         span {

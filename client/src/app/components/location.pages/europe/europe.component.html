@@ -3,28 +3,23 @@
     <div class="recipes-container">
       <div class="recipes-display-container">
         <div class="recipes-container">
-          <div class="recipes-items" *ngFor="let items of recipesEuropeArray">
-            <div class="recipes-title">{{ recipesEuropeTitle }}</div>
-            <span>{{ items }}</span>
+          <div *ngFor="let title of recipesEuropeTitleArray; let i = index">
+            <tr>
+              <td>{{ i }}</td>
+              <td>{{ title }}</td>
+              <td colspan="2"></td>
+            </tr>
+            <tr>
+              <td colspan="2"></td>
+              <td>Test: {{ recipesEuropeArray[i] }}</td>
+            </tr>
           </div>
         </div>
       </div>
       <div class="input-recipes">
         <div class="input-form">
           <br />
-          <!--      <mat-form-field>
-            <textarea
-              [(ngModel)]="RecipeSteps.steps"
-              required
-              name="steps"
-              matInput
-              placeholder="Leave a comment"
-            ></textarea>
-          </mat-form-field>
-          <br />
-          <button (click)="sendRecipe()">
-            send
-          </button> -->
+
           <button mat-button type="button" (click)="openDialog()">
             Create
           </button>

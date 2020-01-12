@@ -168,10 +168,12 @@ router.post("/europe", (req, res) => {
   let userRecipeData = req.body;
   (async () => {
     try {
-      let userRecipe = await new Recipe(userRecipeData).save();
-      let sendBack = await res.send({ userRecipeData });
+      var userRecipe = await new Recipe(userRecipeData).save();
+      var UD = userRecipe.body;
+      var sendBack = await res.send({ UD });
+      // var test = await res.send("dsds");
     } finally {
-      console.log(userRecipeData);
+      console.log(sendBack.body);
     }
   })().catch(err => console.error(err));
 });
